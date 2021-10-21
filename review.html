@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="action.js"></script>
+
+    <link rel="stylesheet" href="site.css" />
+
+    <style type="text/css">
+            body{
+            background:#dcdcdc;    
+            }
+            .total-like-user-main a {
+                display: inline-block;
+                margin: 0 -17px 0 0;
+            }
+            .total-like {
+                border: 1px solid;
+                border-radius: 50px;
+                display: inline-block;
+                font-weight: 500;
+                height: 34px;
+                line-height: 33px;
+                padding: 0 13px;
+                vertical-align: top;
+            }
+            .restaurant-detailed-ratings-and-reviews hr {
+                margin: 0 -24px;
+            }
+            .graph-star-rating-header .star-rating {
+                font-size: 17px;
+            }
+            .progress {
+                background: #f2f4f8 none repeat scroll 0 0;
+                border-radius: 0;
+                height: 30px;
+            }
+            .rating-list {
+                display: inline-flex;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            .rating-list-left {
+                height: 16px;
+                line-height: 29px;
+                width: 10%;
+            }
+            .rating-list-center {
+                width: 80%;
+            }
+            .rating-list-right {
+                line-height: 29px;
+                text-align: right;
+                width: 10%;
+            }
+            .restaurant-slider-pics {
+                bottom: 0;
+                font-size: 12px;
+                left: 0;
+                z-index: 999;
+                padding: 0 10px;
+            }
+            .restaurant-slider-view-all {
+                bottom: 15px;
+                right: 15px;
+                z-index: 999;
+            }
+            .offer-dedicated-nav .nav-link.active,
+            .offer-dedicated-nav .nav-link:hover,
+            .offer-dedicated-nav .nav-link:focus {
+                border-color: #3868fb;
+                color: #3868fb;
+            }
+            .offer-dedicated-nav .nav-link {
+                border-bottom: 2px solid #fff;
+                color: #000000;
+                padding: 16px 0;
+                font-weight: 600;
+            }
+            .offer-dedicated-nav .nav-item {
+                margin: 0 37px 0 0;
+            }
+            .restaurant-detailed-action-btn {
+                margin-top: 12px;
+            }
+            .restaurant-detailed-header-right .btn-success {
+                border-radius: 3px;
+                height: 45px;
+                margin: -18px 0 18px;
+                min-width: 130px;
+                padding: 7px;
+            }
+            .text-black {
+                color: #000000;
+            }
+            .icon-overlap {
+                bottom: -23px;
+                font-size: 74px;
+                opacity: 0.23;
+                position: absolute;
+                right: -32px;
+            }
+            .menu-list img {
+                width: 41px;
+                height: 41px;
+                object-fit: cover;
+            }
+            .restaurant-detailed-header-left img {
+                width: 88px;
+                height: 88px;
+                border-radius: 3px;
+                object-fit: cover;
+                box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)!important;
+            }
+            .reviews-members .media .mr-3 {
+                width: 56px;
+                height: 56px;
+                object-fit: cover;
+            }
+            .rounded-pill {
+                border-radius: 50rem!important;
+            }
+            .total-like-user {
+                border: 2px solid #fff;
+                height: 34px;
+                box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)!important;
+                width: 34px;
+            }
+            .total-like-user-main a {
+                display: inline-block;
+                margin: 0 -17px 0 0;
+            }
+            .total-like {
+                border: 1px solid;
+                border-radius: 50px;
+                display: inline-block;
+                font-weight: 500;
+                height: 34px;
+                line-height: 33px;
+                padding: 0 13px;
+                vertical-align: top;
+            }
+            .restaurant-detailed-ratings-and-reviews hr {
+                margin: 0 -24px;
+            }
+            .graph-star-rating-header .star-rating {
+                font-size: 17px;
+            }
+            .progress {
+                background: #f2f4f8 none repeat scroll 0 0;
+                border-radius: 0;
+                height: 30px;
+            }
+            .rating-list {
+                display: inline-flex;
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            .rating-list-left {
+                height: 16px;
+                line-height: 29px;
+                width: 10%;
+            }
+            .rating-list-center {
+                width: 80%;
+            }
+            .rating-list-right {
+                line-height: 29px;
+                text-align: right;
+                width: 10%;
+            }
+            .restaurant-slider-pics {
+                bottom: 0;
+                font-size: 12px;
+                left: 0;
+                z-index: 999;
+                padding: 0 10px;
+            }
+            .restaurant-slider-view-all {
+                bottom: 15px;
+                right: 15px;
+                z-index: 999;
+            }
+            
+            .progress {
+                background: #f2f4f8 none repeat scroll 0 0;
+                border-radius: 0;
+                height: 30px;
+            }
+                    
+            div.stars {
+                width: 270px;
+                display: inline-block
+            }
+            
+            .mt-200 {
+                margin-top: 200px
+            }
+            
+            input.star {
+                display: none
+            }
+            
+            label.star {
+                float: right;
+                padding: 10px;
+                font-size: 36px;
+                color: #4A148C;
+                transition: all .2s
+            }
+            
+            input.star:checked~label.star:before {
+                content: '\f005';
+                color: #FD4;
+                transition: all .25s
+            }
+            
+            input.star-5:checked~label.star:before {
+                color: #FE7;
+                text-shadow: 0 0 20px #952
+            }
+            
+            input.star-1:checked~label.star:before {
+                color: #F62
+            }
+            
+            label.star:hover {
+                transform: rotate(-15deg) scale(1.3)
+            }
+            
+            label.star:before {
+                content: '\f006';
+                font-family: FontAwesome
+            }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="file:///G:\text_work\my_site\index.html"
+        >HyperShoes</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="file:///G:\text_work\my_site\productsMale.html"
+              >MEN</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///G:\text_work\my_site\productsFemale.html">WOMEN</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">KIDS</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="file:///G:\text_work\my_site\contact.html"
+              >CONTACT US</a
+            >
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></span> Login</a>
+            </li>
+          </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+    <div class="col-md-12">
+        <div class="offer-dedicated-body-left">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                    <h1 class="mb-4 mt-5"
+      style="
+      font-family: demo, Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+    ">
+        <span>User Ratings </span>
+      </h1>
+      <h5 class="mb-4"><a href="file:///G:\text_work\my_site\product.html" style="text-decoration: none; color: black"> > Product</a><h5>
+                    <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix graph-star-rating">
+                        <h5 class="mb-0 mb-4">Ratings and Reviews</h5>
+                        <div class="graph-star-rating-header">
+                            
+                            <b class="text-black ml-2">Total ratings : 334</b>
+                            <p class="text-black mb-4 mt-2">Rated 3.5 out of 5</p>
+                        </div>
+                        <div class="graph-star-rating-body">
+                            <div class="rating-list">
+                                <div class="rating-list-left text-black">
+                                    5 Star
+                                </div>
+                                <div class="rating-list-center">
+                                    <div class="progress">
+                                        <div style="width: 56%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating-list-right text-black">56%</div>
+                            </div>
+                            <div class="rating-list">
+                                <div class="rating-list-left text-black">
+                                    4 Star
+                                </div>
+                                <div class="rating-list-center">
+                                    <div class="progress">
+                                        <div style="width: 23%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating-list-right text-black">23%</div>
+                            </div>
+                            <div class="rating-list">
+                                <div class="rating-list-left text-black">
+                                    3 Star
+                                </div>
+                                <div class="rating-list-center">
+                                    <div class="progress">
+                                        <div style="width: 11%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating-list-right text-black">11%</div>
+                            </div>
+                            <div class="rating-list">
+                                <div class="rating-list-left text-black">
+                                    2 Star
+                                </div>
+                                <div class="rating-list-center">
+                                    <div class="progress">
+                                        <div style="width: 2%" aria-valuemax="5" aria-valuemin="0" aria-valuenow="5" role="progressbar" class="progress-bar bg-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rating-list-right text-black">02%</div>
+                            </div>
+                        </div>
+                        <div class="graph-star-rating-footer text-center mt-3 mb-3">
+                            <button type="button" class="btn btn-outline-primary btn-sm">Rate and Review</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+                        <a href="#" class="btn btn-outline-primary btn-sm float-right">Top Rated</a>
+                        <h5 class="mb-1">All Ratings and Reviews</h5>
+                        <div class="reviews-members pt-4 pb-4">
+                            <div class="media">
+                                <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill"></a>
+                                <div class="media-body">
+                                    <div class="reviews-members-header">
+                                        <span class="star-rating float-right">
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating"></i></a>
+                                              </span>
+                                        <h6 class="mb-1"><a class="text-black" href="#">Sam Osahan</a></h6>
+                                        <p class="text-gray">Tue, 20 Mar 2020</p>
+                                    </div>
+                                    <div class="reviews-members-body">
+                                        <p style="font-size: 16px;">Very nice shoes. Comfort at his very best one. Lightweight shoes. Cool look and comfort. It is an affordable price. Best fitting. The quality of the product is very nice. Values of money is some more.</p>
+                                    </div>
+                                    <div class="reviews-members-footer">
+                                        <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 856M</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 158K</a>
+                                        <span class="total-like-user-main ml-2" dir="rtl">
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Gurdeep Osahan"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar5.png" class="total-like-user rounded-pill"></a>
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Gurdeep Singh"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar2.png" class="total-like-user rounded-pill"></a>
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Askbootstrap"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar3.png" class="total-like-user rounded-pill"></a>
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Osahan"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar4.png" class="total-like-user rounded-pill"></a>
+                                              </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="reviews-members pt-4 pb-4">
+                            <div class="media">
+                                <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar6.png" class="mr-3 rounded-pill"></a>
+                                <div class="media-body">
+                                    <div class="reviews-members-header">
+                                        <span class="star-rating float-right">
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating active"></i></a>
+                                              <a href="#"><i class="icofont-ui-rating"></i></a>
+                                              </span>
+                                        <h6 class="mb-1"><a class="text-black" href="#">Ken Parker</a></h6>
+                                        <p class="text-gray">Wed, 10 Jan 2020</p>
+                                    </div>
+                                    <div class="reviews-members-body">
+                                        <p style="font-size: 16px;">The shoes are Very comfortable, good looking, long lasting, easy to clean. I have black shoes with white hyper symbol on it. They are air max simply the best.</p>
+                                    </div>
+                                    <div class="reviews-members-footer">
+                                        <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 88K</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 1K</a>
+                                        <span class="total-like-user-main ml-2" dir="rtl">
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Gurdeep Osahan"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar5.png" class="total-like-user rounded-pill"></a>
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Gurdeep Singh"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar2.png" class="total-like-user rounded-pill"></a>
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Askbootstrap"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar3.png" class="total-like-user rounded-pill"></a>
+                                              <a data-toggle="tooltip" data-placement="top" title="" href="#" data-original-title="Osahan"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar4.png" class="total-like-user rounded-pill"></a>
+                                              </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>
+                    </div>
+                    <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
+                        <h5 class="mb-4">Leave Comment</h5>
+                        <p class="mb-2">Give your ratings</p>
+                        
+                        <form onsubmit="showRatingDialog();">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="stars">
+                                        <input class="star star-5" id="star-5" type="radio" name="star" />
+                                        <label class="star star-5" for="star-5"></label>
+                                        <input class="star star-4" id="star-4" type="radio" name="star" />
+                                        <label class="star star-4" for="star-4"></label>
+                                        <input class="star star-3" id="star-3" type="radio" name="star" />
+                                        <label class="star star-3" for="star-3"></label>
+                                        <input class="star star-2" id="star-2" type="radio" name="star" />
+                                        <label class="star star-2" for="star-2"></label>
+                                        <input class="star star-1" id="star-1" type="radio" name="star" checked />
+                                        <label class="star star-1" for="star-1"></label>
+                                    </div>
+                                </div>
+                                <label>Your Review</label>
+                                <textarea class="form-control" id="review" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-sm" type="submit"> Submit Review </button>
+
+                                <button class="btn btn-primary btn-sm" type="button" onclick="resetReview();"> Clear Review </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="footer-dark">
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-3 item">
+                <h3>Product</h3>
+                <ul>
+                  <li><a href="#">Mens Shoes</a></li>
+                  <li><a href="#">Womens Shoes</a></li>
+                  <li><a href="#">Kids shoes</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-3 item">
+                <h3>About</h3>
+                <ul>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 item text">
+                <h3>Hyper Shoes</h3>
+                <p>
+                  Hyper Shoes International Limited is a footwear and clothing
+                  manufacturer that has been a subsidiary of American management
+                  company Authentic Brands Group since August 2021. From 2005 to
+                  2021, the brand was owned by German sporting goods giant Seha.
+                </p>
+              </div>
+            </div>
+            <p class="copyright">Hyper Shoes © 2021</p>
+          </div>
+        </footer>
+      </div>
+  </body>
+</html>

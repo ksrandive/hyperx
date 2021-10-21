@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="action.js"></script>
+    <link rel="stylesheet" href="site.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .containerContact {
+        position: absolute;
+        right: 0;
+        margin: 41px;
+        width: 544px;
+        padding: 16px;
+        background:rgb(255, 255, 255, 0.1);
+        
+        color: black;
+      }
+
+      input[type="text"],
+      input[type="textarea"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type="text"]:focus,
+      input[type="textarea"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Set a style for the submit button */
+      .btn {
+        background-color: #4082c0;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 49%;
+        opacity: 0.9;
+      }
+
+      .btn:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="file:///G:\text_work\my_site\index.html"
+        >HyperShoes</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="file:///G:\text_work\my_site\productsMale.html"
+              >MEN</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///G:\text_work\my_site\productsFemale.html">WOMEN</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">KIDS</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="file:///G:\text_work\my_site\contact.html"
+              >CONTACT US</a
+            >
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></span> Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="myimg">
+        
+      <form onsubmit="showDialog();" class="containerContact">
+        <h1 style="color: black; text-align: center;">Contact Us</h1>
+        <hr />
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter name" id="name" required />
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" id="email" required />
+
+        <label for="message"><b>Message</b></label>
+        <input
+          type="textarea"
+          placeholder="Enter Message"
+          id="message"
+          required
+        />
+
+        <button type="submit" class="btn">Submit</button>
+        <button type="button" class="btn" onclick="ClearFields();">
+          Reset
+        </button>
+      </form>
+    </div>
+
+    <div class="footer-dark">
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-3 item">
+                <h3>Product</h3>
+                <ul>
+                  <li><a href="#">Mens Shoes</a></li>
+                  <li><a href="#">Womens Shoes</a></li>
+                  <li><a href="#">Kids shoes</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-3 item">
+                <h3>About</h3>
+                <ul>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Careers</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 item text">
+                <h3>Hyper Shoes</h3>
+                <p>
+                  Hyper Shoes International Limited is a footwear and clothing
+                  manufacturer that has been a subsidiary of American management
+                  company Authentic Brands Group since August 2021. From 2005 to
+                  2021, the brand was owned by German sporting goods giant Seha.
+                </p>
+              </div>
+            </div>
+            <p class="copyright">Hyper Shoes © 2021</p>
+          </div>
+        </footer>
+      </div>
+  </body>
+</html>
